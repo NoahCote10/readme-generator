@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require("./utils/generateMarkdown")
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions =[
         {
             type: 'input',
@@ -42,28 +42,28 @@ const questions =[
         },
         {
             type: 'input',
-            name: 'questions-github',
+            name: 'github',
             message: 'Enter your GitHub username.'
         },
         {
             type: 'input',
-            name: 'questions-email',
-            message: 'Enter email and contact instructions.'
+            name: 'email',
+            message: 'Enter email.'
         },
     ]
-// TODO: Create a function to write README file
+// Writes README file
 function createReadMe(name, input) {
     fs.writeFile(name, input, (err) => 
     err ? console.error(err) : console.log ("ReadMe successfully created"))
  }
 
-// TODO: Create a function to initialize app
+// Initializes app
 function init() { 
-    inquirer.prompt(questions).then((data) => {
-        const content = generateMarkdown(data);
+    inquirer.prompt(questions).then((answers) => {
+        const content = generateMarkdown(answers);
         createReadMe("README.md", content)
     })
 }
 
-// Function call to initialize app
+// Call to initialize app
 init();
