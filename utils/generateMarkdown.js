@@ -65,7 +65,6 @@ ${renderLicenseBadge(answers.license)}
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
-
 ${addLicenseTOC(answers.license)}
 - [Usage](#usage)
 - [Contribution](#contributing)
